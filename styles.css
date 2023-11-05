@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+
+.buttons button{
+    display: block;
+}
+
+button{
+    padding: 3px 5px 3px 5px;
+    background-color: #F0F0F0;
+    border: 1px solid darkgray;
+    border-radius: 5%;
+}
+
+.right_button{
+    width: 25px;
+}
+
+input{
+    height: 20px;
+    width: 200px;
+    border: 1px solid darkgray;
+}
+
+.element{
+    word-spacing: -10px;
+}
+
+.save:hover{
+    border-color: skyblue;
+    border-width: 2px;
+}

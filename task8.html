@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <script defer src="script.js"></script>
+        <title>Fronted Task №9</title>
+    </head>
+    <body>
+        <div class="content">
+            <div class="elements">
+                <div class="element">
+                    <input type="text">
+                    <input type="number">
+                    <button class="right_button" onclick="Up(this.parentNode)" value="up">↑</button>
+                    <button class="right_button" onclick="Down(this.parentNode)" value="down">↓</button>
+                    <button class="right_button" onclick="Delete(this.parentNode)" value="delete">x</button>
+                </div>
+            </div>
+            <div class="buttons">
+                <button onclick = "CreateNewElement()">Добавить элемент</button>
+                <button class="save" onclick = "Save()">Сохранить</button>
+            </div>
+            <div class="dictionary"></div>
+        </div>
+    </body>
+</html>
