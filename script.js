@@ -3,8 +3,8 @@ function CreateNewElement() {
     const new_element = document.createElement('div');
     new_element.className = 'element';
     new_element.innerHTML = `
-                <input type="text">
-                <input type="number">
+                <input class="name" type="text">
+                <input class="number" type="text">
                 <button class="right_button" onclick="Up(this.parentNode)" value="up">↑</button>
                 <button class="right_button" onclick="Down(this.parentNode)" value="down">↓</button>
                 <button class="right_button" onclick="Delete(this.parentNode)" value="delete">x</button>
@@ -35,20 +35,18 @@ function Delete(element) {
 function UpdateElements() {
     elements = [];
     document.querySelectorAll('.element').forEach(element => {
-        const name = element.querySelector('input[type="text"]').value;
-        const number = element.querySelector('input[type="number"]').value;
+        const name = element.querySelector('.name').value;
+        const number = element.querySelector('.number').value;
         elements.push({ name, number });
     })
 }
 
 function Save() {
-    const dictionary = {};
-    document.querySelectorAll('.element').forEach((element) => {
-        const name = element.querySelector('input[type="text"]').value;
-        const number = element.querySelector('input[type="number"]').value;
-        dictionary[`${name}`] = `${number}`;
-    });
-    const result = document.querySelector('.dictionary');
-    result.textContent = JSON.stringify(dictionary);
+    let dictionary = "{"
+    document.querySelectorAll('.element').forEach(element =>{
+        dictionary+=`"${element.querySelector('.name').value}" : "${element.querySelector('.number').value}",\n` 
+    })
+    dictionary = dictionary.slice(0, -2);
+    dictionary+="}";
+    document.querySelector('.dictionary').textContent = dictionary;
 }
-
